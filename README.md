@@ -1,4 +1,4 @@
-useful-scripts
+Useful scripts
 ==============
 
-Useful scripts
+*bash/mobile/tele2.sh* - check balance TELE2
