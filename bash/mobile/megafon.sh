@@ -16,7 +16,7 @@ SG_SITE=
 # End settings.
 
 
-_S_RESPONSE=`curl --silent -L -d "X_Username=$MYPHONE&X_Password=$PASSWORD" "https://$SG_SITE/ROBOTS/SC_TRAY_INFO"`
+_S_RESPONSE=`curl --silent -L -H "Accept: */*" -d "X_Username=$MYPHONE&X_Password=$PASSWORD" "https://$SG_SITE/ROBOTS/SC_TRAY_INFO"`
 
 _BALANCE=`echo "$_S_RESPONSE" | grep "<BALANCE>" | sed -e "s@<[^>]*>@@g" -e "s@ @@g"`
 _DATE=`echo "$_S_RESPONSE" | grep -m 1 "<DATE>" | sed -e "s@<[^>]*>@@g" `
