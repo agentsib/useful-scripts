@@ -6,7 +6,7 @@ HABRA_USER="agentsib"
 
 
 
-
+export DISPLAY=:0
 
 HABRA_LINK="http://habrahabr.ru/users/$HABRA_USER"
 
