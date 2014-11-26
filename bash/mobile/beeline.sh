@@ -32,7 +32,7 @@ _RESPONSE=`auth_request`
 
 if [ "$_RESPONSE" != "" ];
 then
-	_WARN=`_RESPONSE | grep "messages-error"`
+	_WARN=`echo $_RESPONSE | grep "messages-error"`
 	if [ "$_WARN" == "" ];
 	then
 		_BALANCE=`echo $_RESPONSE | egrep -o "<span class=\"price[^\"]?\">[^<]+<span[^>]+>" | sed -e 's@<[^>]*>@@g' -e 's@\s*@ @' -e 's@\ @ @g' -e 's@^\s*@@'`
