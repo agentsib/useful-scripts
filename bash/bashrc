@@ -12,3 +12,8 @@ if [ "$PS1" ]; then
   fi
 fi
 
+
+# Wireguard peers name (example: PublicKey {KEY} # Peer name)
+function wg {
+    WG_COLOR_MODE=always command wg "$@" | sed -e "$(while read -r tag eq key hash name; do [ "$tag" == "PublicKey" ] && echo "s#$key#$key ($name)#;"; done < /etc/wireguard/wg0.conf)"
+}
